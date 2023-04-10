@@ -1,24 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import SplashScreen from './Components/SplashScreen';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import SelectLanguage from './Components/SelectLanguage';
+import SwastikClinic from './Components/SwastikClinic';
+import Myappointment from './Components/myappointment';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Routes>
+          <Route path='/splashScreen' element = { <SplashScreen /> } />
+          <Route path='/selectLang' element = { <SelectLanguage /> } />
+          <Route path='/swastikClinic' element = { <SwastikClinic /> } />
+          <Route path='/swastikClinic/Myappointment' element = { <Myappointment /> } />
+        </Routes>
+      </Router>
     </div>
   );
 }
